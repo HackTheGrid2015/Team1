@@ -320,7 +320,7 @@ function contains(a, obj){
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
+        zoom: 4,
         center: {lat: 38.425646, lng: -99.944614},
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false,
@@ -352,7 +352,7 @@ function initMap() {
         var marker = markers[i];
         addMarker(marker);
     }
-    autoCenter();
+    // autoCenter();
 }
 
   function autoCenter(){
