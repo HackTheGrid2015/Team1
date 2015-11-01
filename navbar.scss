@@ -1,0 +1,47 @@
+$bg-color:#2c3e58;
+$hover-color:#16a885;
+$text-color:#ffffff;
+
+#right{
+  text-align:center;
+  float:right;
+  font-size:25px;
+  width:500px;
+  white-space:nowrap;
+  color:$text-color;
+}
+nav{
+    margin:0 100px;
+    ul{
+      background: -webkit-radial-gradient(rgba(255, 102, 102, 0.75), rgba(128,0,0,0.75)), url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+      background: radial-gradient(rgba(255, 102, 102, 0.75), rgba(128,0,0,0.75)), url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+      margin : 0;
+      padding : 0;
+      list-style:none;
+    }
+    li{
+      display:inline-block;
+    }
+    a{
+
+      font-family: Papyrus, fantasy;
+      font-size:20px;
+      color :$text-color;
+      display:inline-block;
+      padding-top: 10px;
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-bottom: 10px;
+      font-weight:bold;
+      width: 75px;
+      text-decoration:none;
+      text-align:center;
+    }
+    a:hover{
+      color :$text-color;
+      background: -webkit-radial-gradient(rgba(50, 50, 50, 0.75), rgba(0,0,0,0.75)), url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+      background: radial-gradient(rgba(50, 50, 50, 0.75), rgba(0,0,0,0.75)), url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);;
+      text-decoration:none;
+
+    }
+}

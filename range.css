@@ -1,0 +1,160 @@
+input[type='range'] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.25em 0;
+    width: 28em;
+    height: 3em;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: .75;
+    background: transparent;
+    font-size: 1em;
+    cursor: pointer;
+}
+input[type='range'], input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    width: 28em;
+    height: 1.5em;
+    border-radius: 0.75em;
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+    background: #7aa9b3;
+}
+input[type='range']::-moz-range-track {
+    box-sizing: border-box;
+    padding: 0.25em;
+    width: 28em;
+    height: 1.5em;
+    border-radius: 0.75em;
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+    background: #7aa9b3;
+}
+input[type='range']::-ms-track {
+    border: none;
+    box-sizing: border-box;
+    padding: 0.25em;
+    width: 28em;
+    height: 1.5em;
+    border-radius: 0.75em;
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+    background: #7aa9b3;
+    color: transparent;
+}
+input[type='range']::-moz-range-progress {
+    box-sizing: border-box;
+    border-left: solid 0.25em transparent;
+    height: 1em;
+    border-radius: 0.5em 0.1875em 0.1875em 0.5em / 50%;
+    box-shadow: inset 0 -1px 1px #09313d, inset 0 1px 1px #c0edf3;
+    background: url(//i.imgur.com/3JZchqt.png), linear-gradient(0deg, #249ac0, #70d1e2);
+    background-clip: padding-box;
+    border-radius: 0.75em 0.1875em 0.1875em 0.75em / 50%;
+    background-clip: padding-box;
+}
+input[type='range']::-ms-fill-lower {
+    height: 1em;
+    border-radius: 0.5em 0.1875em 0.1875em 0.5em / 50%;
+    box-shadow: inset 0 -1px 1px #09313d, inset 0 1px 1px #c0edf3;
+    background: url(//i.imgur.com/3JZchqt.png), linear-gradient(0deg, #249ac0, #70d1e2);
+    background-clip: padding-box;
+}
+input[type='range']::-webkit-slider-thumb {
+    position: relative;
+    margin-top: -0.375em;
+    box-sizing: border-box;
+    border: solid 0.125em rgba(205, 224, 230, 0.5);
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    box-shadow: 0 .125em .125em #3b4547;
+    background: -webkit-radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, -webkit-radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, -webkit-radial-gradient(at 50% 0, #777777, rgba(119, 119, 119, 0) 71%) 50% 0, -webkit-radial-gradient(at 50% 100%, #777777, rgba(119, 119, 119, 0) 71%) 50% 100%, -webkit-radial-gradient(at 0 50%, #777777, rgba(119, 119, 119, 0) 71%) 0 50%, -webkit-radial-gradient(at 100% 50%, #777777, rgba(119, 119, 119, 0) 71%) 100% 50%, -webkit-radial-gradient(rgba(59, 69, 71, 0) 50%, #3b4547 71%) 50% -0.25em #fff;
+    background: radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(at 50% 0, #777777, rgba(119, 119, 119, 0) 71%) 50% 0, radial-gradient(at 50% 100%, #777777, rgba(119, 119, 119, 0) 71%) 50% 100%, radial-gradient(at 0 50%, #777777, rgba(119, 119, 119, 0) 71%) 0 50%, radial-gradient(at 100% 50%, #777777, rgba(119, 119, 119, 0) 71%) 100% 50%, radial-gradient(rgba(59, 69, 71, 0) 50%, #3b4547 71%) 50% -0.25em #fff;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% .125em, .125em  100%,  50% 50%, 50% 50%, 50% 50%, 50% 50%,  115% 115%;
+    -webkit-filter: drop-shadow(0 1px #516570);
+    filter: drop-shadow(0 1px #516570);
+}
+input[type='range']::-moz-range-thumb {
+    box-sizing: border-box;
+    border: solid 0.125em rgba(205, 224, 230, 0.5);
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    box-shadow: 0 .125em .125em #3b4547;
+    background: radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(at 50% 0, #777777, rgba(119, 119, 119, 0) 71%) 50% 0, radial-gradient(at 50% 100%, #777777, rgba(119, 119, 119, 0) 71%) 50% 100%, radial-gradient(at 0 50%, #777777, rgba(119, 119, 119, 0) 71%) 0 50%, radial-gradient(at 100% 50%, #777777, rgba(119, 119, 119, 0) 71%) 100% 50%, radial-gradient(rgba(59, 69, 71, 0) 50%, #3b4547 71%) 50% -0.25em #fff;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% .125em, .125em  100%,  50% 50%, 50% 50%, 50% 50%, 50% 50%,  115% 115%;
+}
+input[type='range']::-ms-thumb {
+    box-sizing: border-box;
+    border: solid 0.125em rgba(205, 224, 230, 0.5);
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    box-shadow: 0 .125em .125em #3b4547;
+    background: radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(#777777, rgba(119, 119, 119, 0) 70%) 50% 50%, radial-gradient(at 50% 0, #777777, rgba(119, 119, 119, 0) 71%) 50% 0, radial-gradient(at 50% 100%, #777777, rgba(119, 119, 119, 0) 71%) 50% 100%, radial-gradient(at 0 50%, #777777, rgba(119, 119, 119, 0) 71%) 0 50%, radial-gradient(at 100% 50%, #777777, rgba(119, 119, 119, 0) 71%) 100% 50%, radial-gradient(rgba(59, 69, 71, 0) 50%, #3b4547 71%) 50% -0.25em #fff;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% .125em, .125em  100%,  50% 50%, 50% 50%, 50% 50%, 50% 50%,  115% 115%;
+}
+.js input[type='range']::-webkit-slider-runnable-track:before, .js input[type='range'] /deep/ #track:before {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    width: 0em;
+    height: 1em;
+    border-radius: 0.5em 0.1875em 0.1875em 0.5em / 50%;
+    box-shadow: inset 0 -1px 1px #09313d, inset 0 1px 1px #c0edf3;
+    background: url(//i.imgur.com/3JZchqt.png), -webkit-linear-gradient(90deg, #249ac0, #70d1e2);
+    background: url(//i.imgur.com/3JZchqt.png), linear-gradient(0deg, #249ac0, #70d1e2);
+    background-clip: padding-box;
+    content: '';
+}
+.js input[type='range']::-webkit-slider-thumb:before, .js input[type='range']::-webkit-slider-thumb:after, .js input[type='range'] /deep/ #thumb:before, .js input[type='range'] /deep/ #thumb:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    color: #ebeef3;
+    text-align: center;
+    text-shadow: 0 1px 1px #4d5d7e;
+}
+.js input[type='range']::-webkit-slider-thumb:before, .js input[type='range'] /deep/ #thumb:before {
+    width: 4em;
+    height: 2.25em;
+    border-radius: 0.125em;
+    -webkit-transform: translate(-50%, -0.5em);
+    transform: translate(-50%, -0.5em);
+    box-shadow: inset 0 1px 1px #d1e4f9;
+    background: url(//i.imgur.com/3JZchqt.png), -webkit-linear-gradient(#b9d7f9, #a0a8d6);
+    background: url(//i.imgur.com/3JZchqt.png), linear-gradient(#b9d7f9, #a0a8d6);
+    -webkit-clip-path: polygon(2.375em 1.875em, 2em 2.25em, 1.625em 1.875em, 0.125em 1.875em, 0.07716em 1.86548em, 0.03661em 1.83839em, 0.00952em 1.79784em, 0em 1.75em, 0em 0.125em, 0.00952em 0.07716em, 0.03661em 0.03661em, 0.07716em 0.00952em, 0.125em 0em, 3.875em 0em, 3.92284em 0.00952em, 3.96339em 0.03661em, 3.99048em 0.07716em, 4em 0.125em, 4em 1.75em, 3.99048em 1.79784em, 3.96339em 1.83839em, 3.92284em 1.86548em, 3.875em 1.875em);
+    clip-path: polygon(2.375em 1.875em, 2em 2.25em, 1.625em 1.875em, 0.125em 1.875em, 0.07716em 1.86548em, 0.03661em 1.83839em, 0.00952em 1.79784em, 0em 1.75em, 0em 0.125em, 0.00952em 0.07716em, 0.03661em 0.03661em, 0.07716em 0.00952em, 0.125em 0em, 3.875em 0em, 3.92284em 0.00952em, 3.96339em 0.03661em, 3.99048em 0.07716em, 4em 0.125em, 4em 1.75em, 3.99048em 1.79784em, 3.96339em 1.83839em, 3.92284em 1.86548em, 3.875em 1.875em);
+    font: 2em/1.40625em trebuchet ms, verdana, arial, sans-serif;
+    content: "Now";/*change*/
+}
+.js input[type='range']::-webkit-slider-thumb:after, .js input[type='range'] /deep/ #thumb:after {
+    width: 9.6em;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -2.75em);
+    transform: translate(-50%, -2.75em);
+    box-shadow: 0 2.25em 0.625em -0.5em rgba(55, 84, 92, 0.75);
+    font: 0.75em trebuchet ms, verdana, arial, sans-serif;
+    white-space: nowrap;
+    content: "start to view";/*change*/
+}
+input[type='range']:focus {
+    outline: none;
+    opacity: .99;
+}
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Polygon Arrays</title>
+      <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />-->
+      <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
+      <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+      <script type="text/javascript" src="color.js"></script>
+      <script type="text/javascript" src="info.js"></script>
+      <script type="text/javascript" src="output.js"></script>
+      <script type="text/javascript" src="range.js"></script>
+      <script type="text/javascript" src="map.js"></script>
+      <script type="text/javascript" src="jquery.flot.min.js"></script>
+
+      <script type="text/javascript" src="box.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" type="text/javascript"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="range.css">
+      <link rel="stylesheet" type="text/css" href="graph.css">
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <link rel="stylesheet" type="text/css" href="button.css">
+      <link rel="stylesheet" type="text/css" href="box.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <style>
+      html{
+        height: 100%;
+      }
+      body{
+        height: 100%;
+          /*background: radial-gradient(rgba(255, 102, 102, 0.75), rgba(128,0,0,0.75)), */
+          /*url(http://www.psdgraphics.com/file/wooden-panels.jpg);*/
+          background: radial-gradient(rgba(100, 100, 100, 0.8), rgba(0,0,0,0.8)),
+          url(http://www.psdgraphics.com/file/wooden-panels.jpg);
+      }
+      #pan-left{height:680px;padding-top:30px;} /* leftbox */
+      #map-outer {height: 680px; padding-top: 70px; } /*rightbox*/
+      #info-pan{height:400px;padding:30px 50px 10px 20px;border-radius: 25px;
+          /*border: 3px solid #000;*/
+      }/*lefttop*/
+      #info-real-pan{height:300px;border-radius: 15px;
+          /*border: 3px solid #000;*/
+          font-family:Papyrus, fantasy;
+          color:#FFF;
+          /*background: -webkit-radial-gradient(rgba(50, 50, 50, 0.75), rgba(0,0,0,0.75)),*/
+          /*url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);*/
+          /*background: radial-gradient(rgba(50, 50, 50, 0.75), rgba(0,0,0,0.75)),*/
+          /*url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);*/
+      }
+      #button-pan{height:260px;padding:0px 50px 10px 20px;
+          border-radius: 25px;
+          /*border: 3px solid #000;*/
+      }/*righttop*/
+      #button-real-pan{height:200px;border-radius: 15px;
+          font-family:Papyrus, fantasy;
+          /*border: 3px solid #000;*/
+          background: -webkit-radial-gradient(rgba(50,50,50,0.75), rgba(0,0,0,0.75)),
+          url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+          background: radial-gradient(rgba(50, 50, 50, 0.75), rgba(0,0,0,0.75)),
+          url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+      }
+
+
+      #button-pannel{height:100px;
+          border-radius: 0 0 25px 25px;
+          /*border: 3px solid #000;*/
+          /*box-shadow: 10px 10px 5px #888888;*/
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
+          /*background: -webkit-radial-gradient(rgba(255, 102, 102, 0.75), rgba(128,0,0,0.75)), */
+          /*url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);*/
+          /*background: radial-gradient(rgba(255, 102, 102, 0.75), rgba(128,0,0,0.75)), */
+          /*url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);}/!*leftbottom*!/*/
+          background: -webkit-radial-gradient(rgba(50,50,50,0.75), rgba(0,0,0,0.75)),
+          url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);
+          background: radial-gradient(rgba(50,50,50,0.75), rgba(0,0,0,0.75)),
+          url(//i.imgur.com/3JZchqt.png), url(//i.imgur.com/9kxBTzr.jpg);}/*leftbottom*/
+      #map {
+        height: 500px;
+          /*box-shadow: 10px 10px 5px #888888;*/
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
+          border-radius: 25px 25px 0 0;
+          border-color: #000;
+          border: 15px solid;
+
+
+      }
+      #list{
+          height: 500px;
+          /*box-shadow: 10px 10px 5px #888888;*/
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
+          border-radius: 25px 25px 0 0;
+          border-color: #000;
+          background-color:#FFF;
+          padding-top:20px;
+          /*padding-top:20px;*/
+          /*background-color:rgba(0,0,0,0.5);*/
+          border: 15px solid;
+      }
+      .wrapper{
+          /*border-right: 3px solid #000;*/
+          /*box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);*/
+          height:97px;
+          padding-top:30px;
+
+      }
+/*      .wrapper {height: 440px; padding: 20px; border: 2px solid #CCC; background-color:#FFF }*/
+      .address {height: 400px; background-color:#FFF }
+      .address1 {height: 200px; padding: 20px;border: 2px solid red; background-color:#FFF }
+
+/*      .add{height:200px}*/
+    </style>
+  </head>
+  <body>
+  <nav>
+      <ul>
+          <li>
+              <a href="#">Hack</a>
+          </li>
+          <li>
+              <a href="#">The</a>
+          </li>
+          <li>
+              <a href="#">Grid</a>
+          </li>
+          <div id="right">
+              Carnegie Mellon Unverisity
+          </div>
+      </ul>
+  </nav>
+  <div class="container">
+     <div class="row">
+         <div id="pan-left" class="col-md-3">
+             <div class="row">
+                 <div id="info-pan" class="col-md-12">
+                     <div id="info-real-pan">
+                         <!--<h3>Overall information</h3>-->
+                         <!--<p>everyday CMU consumes so much energy, we need to group up for saving it</p>-->
+                         <!--<div id="overlay">-->
+			                <!--<header>Long: 38.2532, Lat: -91.3921-->
+                            <!--</header>-->
+      	                    <!--<section>-->
+                             <!--<p>Industry: Commercial</p>-->
+                             <!--<p>Subindustry: Manufacture</p>-->
+                             <!--<p>TimeZone: American/New_York-->
+                                 <!--<button>Ok</button>-->
+                             <!--</p>-->
+                            <!--</section>-->
+                         <!--</div>-->
+                         <!--<script src="box.js"></script>-->
+                     </div>
+                 </div>
+                 <!--<div id="button-pan" class="col-md-12">-->
+                     <!--<div id="button-real-pan"></div>-->
+                 <!--</div>-->
+             </div>
+         </div>
+         <div id="map-outer" class="col-md-9">
+             <div class="row">
+                 <button type="button" class="btn-blue" id="btn1">E</button>
+                 <!--<button type="button" class="btn-blue" onClick="disp1()">L</button>-->
+                 <div id="map" class="col-md-12">
+
+                 </div>
+                 <div id="list" class="col-md-12" style="display:none">
+                     <div class="graph-info">
+                         <!--<a href="javascript:void(0)" class="visitors">Visitors</a>-->
+                         <!--<a href="javascript:void(0)" class="returning">Returning Visitors</a>-->
+
+                         <a href="#" id="bars"><span></span></a>
+                         <a href="#" id="lines" class="active"><span></span></a>
+                     </div>
+
+                     <div class="graph-container">
+                         <div id="graph-lines"></div>
+                         <div id="graph-bars"></div>
+                     </div>
+
+                 </div>
+                 <div id="button-pannel" class="col-md-12">
+                     <div id="row">
+                         <div class="col-md-3">
+                             <form action="action_page.php">
+                                 start: <input type="date" name="startdate" id="startdate" value="2014-01-01">
+                                 end:   <input type="date" name="enddate" id="enddate" value="2015-01-01">
+                             </form>
+                             <!--<button type="button" class="btn-yellow" onClick="turnYellow()">T</button>-->
+                             <!--<button type="button" class="btn-red" onClick="turnRed()">C</button>-->
+
+                         </div>
+                         <div class="col-md-9" style="padding-top: 100px">
+                             <input type='range' value='0'>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="chart.js"></script>
+  <script type="text/javascript" src="jquery.flot.min.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+    <script type="text/javascript" src="range.js"></script>
+
+  </body>
+</html>

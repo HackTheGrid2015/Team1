@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>How to create an Interactive Graph using CSS3 & jQuery</title>
+
+    <!--<style>html,body{height:100%}body{min-height: 700px;-->
+    <!-&#45;&#45;webkit-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;-->
+    <!-&#45;&#45;mox-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;-->
+    <!--box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;margin:0}-->
+    <!--#graph-wrapper{width:640px;margin:0 auto;padding-top:275px}</style>-->
+
+    <link rel="stylesheet" href="graph.css">
+    <meta name="robots" content="noindex,follow" />
+</head>
+
+<body>
+
+<!-- Graph HTML -->
+<div>
+    <div class="graph-info">
+        <a href="javascript:void(0)" class="visitors">Visitors</a>
+        <a href="javascript:void(0)" class="returning">Returning Visitors</a>
+
+        <a href="#" id="bars"><span></span></a>
+        <a href="#" id="lines" class="active"><span></span></a>
+    </div>
+
+    <div class="graph-container">
+        <div id="graph-lines"></div>
+        <div id="graph-bars"></div>
+    </div>
+</div>
+<!-- end Graph HTML -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="chart.js"></script>
+<script type="text/javascript" src="jquery.flot.min.js"></script>
+
+</body>
+
+</html>
